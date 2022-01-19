@@ -1,0 +1,66 @@
+{% load static %}
+<!doctype html>
+<html lang="en">
+  <head>
+  {% load static %}
+  <title>{% block title %}{% endblock title %}</title>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="{% static '/css/bootstrap.min.css' %}">
+
+  <!-- Font Awesome CSS -->
+  <link rel="stylesheet" href="{% static '/css/all.min.css' %}">
+    <style>
+h2{
+  background-color:green;
+  color:white;
+}
+#w{
+  background-color:red;
+  color:white;
+  font-weight:bold
+}
+ 
+    </style>
+    </head>
+  <body>
+ 
+ <div class="div1">
+ <form action="/show">
+ <input type="submit" value="show record" id="w">
+     </form>
+ </div>
+ <div class="container">
+ <h2 class="text-center c">CRUD APPLICATION</h1>
+ {{msg}}
+
+ <form action="/send/" method="post">
+
+ {% csrf_token %}
+ <div class="form-group">
+   
+ <h1> Name<input type="text" class="form-control"Required name='id1' id="id"></h1>
+ </div>
+ <div class="form-group">
+<h1> ID1<input type="text"class="form-control" Required name='id2' id="id"></h1>
+</div>
+<div class="form-grop">
+<h1>ID2<input type="text"class="form-control" Required name='id3' id="id"></h1>
+</div>
+<input type="submit" class="btn btn-danger ">
+ </form>
+    </div>
+
+    
+
+    
+ <script  src="{% static 'js/jquery.min.js' %}"></script>
+  
+  <script src="{% static 'js/bootstrap.min.js' %}"></script>
+  <script src="{% static 'js/all.min.js' %}"></script>
+
+  </body>
+</html>
